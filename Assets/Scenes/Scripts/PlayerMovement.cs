@@ -5,8 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]private float moveSpeed = 10f;
-    public Camera cam;
-    private Vector3 playerPosition;
 
     private float xInp;
     private float zInp;
@@ -18,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
-        playerPosition = transform.position;
     }
 
     
@@ -32,8 +29,5 @@ public class PlayerMovement : MonoBehaviour
         zInp = Input.GetAxis("Vertical");
 
         transform.position = transform.position + new Vector3(xInp * moveSpeed * Time.deltaTime,0f ,zInp * moveSpeed * Time.deltaTime);
-
-        
-        
     }
 }
