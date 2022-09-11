@@ -7,6 +7,20 @@ public Transform player;
 public float move_speed;
 public float rotation_speed;
 public Transform enemy;
+
+ void OnTriggerEnter(Collider other) {
+    if(other.name == "Player")
+    {
+        Debug.Log("Игрок обнаружен, атакую!");
+    }
+}
+
+ void OnTriggerExit(Collider other) {
+    if(other.name == "Player")
+    {
+        Debug.Log("Игрока не видно, ухожу :(");
+    }
+}
 void Update()
 {
 var look_dir = player.position - enemy.position;
